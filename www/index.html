@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+    <title>CallMe</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="lib/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="css/themes/mytheme.css" />
+    <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="css/index.css">
+    <script src="lib/jquery.min.js"></script>
+    <script src="lib/jquery.mobile-1.4.5.min.js"></script>
+    <script src="cordova.js"></script>
+    <script src="js/index.js"></script>
+</head>
+<body>
+<!-- Home Page -->
+<div id="homePage" data-role="page">
+    <header data-role="header">
+        <h1>CallMe</h1>
+    </header>
+    <main role="main" class="ui-content">
+        <a href="#addContactPage" data-role="button" data-icon="plus" data-iconpos="right">Add</a>
+        <ul id="contactList" data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="search" data-split-icon="gear" data-split-theme="a">
+            <!-- Contacts will be injected here -->
+        </ul>
+    </main>
+    <footer data-role="footer" data-position="fixed">
+        <h1>DIC2 - Marie Waly Fall &copy; 2024</h1>
+    </footer>
+</div>
+
+<!-- Contact Details Page -->
+<div id="detailsPage" data-role="page">
+    <header data-role="header">
+        <a href="#homePage" data-role="button" data-icon="home" data-iconpos="notext" class="rounded-button"></a>
+        <h1>CallMe - Details</h1>
+        <a href="#editContactPage" data-role="button" data-icon="edit" data-iconpos="left" class="rounded-button"></a>
+    </header>
+    <main role="main" class="ui-content">
+        <ul data-role="listview" data-inset="true" data-divider-theme="a">
+            <li data-icon="false" data-role="list-divider" style="width: 100%; height: 60px; text-align: center; font-size:25px; display: flex; flex-direction: column; justify-content: center; align-items: center;" data-divider-theme="a"></li>
+            <li style="margin-top: 10px;" data-icon="phone" data-iconpos="left" ><a href="#"></a></li>
+            <li style="margin-top: 10px;" data-icon="mail" data-iconpos="left"><a href="#"></a></li>
+        </ul>
+    </main>
+    <footer data-role="footer" data-position="fixed">
+        <h1>DIC2 - Marie Waly Fall &copy; 2024</h1>
+    </footer>
+</div>
+
+<!-- Add Contact Page -->
+<div id="addContactPage" data-role="page">
+    <header data-role="header">
+        <a href="#homePage" data-role="button" data-icon="home" data-iconpos="notext"></a>
+        <h1>CallMe - Add a Contact</h1>
+    </header>
+    <main role="main" class="ui-content">
+        <header data-role="header">
+            <h1>Add Contact</h1>
+        </header>
+        <form id="addContactForm">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email">
+            <button type="submit" onclick="addContact(event)">Add Contact</button>
+        </form>
+    </main>
+    <footer data-role="footer" data-position="fixed">
+        <h1>DIC2 - Marie Waly Fall &copy; 2024</h1>
+    </footer>
+</div>
+
+<!-- Edit Contact Page -->
+<div id="editContactPage" data-role="page">
+    <header data-role="header">
+        <a href="#homePage" data-role="button" data-icon="home" data-iconpos="notext"></a>
+        <h1>CallMe - Edit a Contact</h1>
+    </header>
+    <main role="main" class="ui-content">
+        <header data-role="header">
+            <h1>Edit Contact</h1>
+        </header>
+        <form id="editContactForm">
+            <label for="EditFirstName">First Name</label>
+            <input type="text" id="EditFirstName" name="firstName">
+            <label for="EditLastName">Last Name</label>
+            <input type="text" id="EditLastName" name="lastName">
+            <label for="Editphone">Phone</label>
+            <input type="tel" id="Editphone" name="phone">
+            <label for="EditEmail">Email</label>
+            <input type="email" id="EditEmail" name="email">
+            <button type="submit" onclick="editContact(event)">Edit Contact</button>
+        </form>
+    </main>
+    <footer data-role="footer" data-position="fixed">
+        <h1>DIC2 - Marie Waly Fall &copy; 2024</h1>
+    </footer>
+</div>
+</body>
+</html>
